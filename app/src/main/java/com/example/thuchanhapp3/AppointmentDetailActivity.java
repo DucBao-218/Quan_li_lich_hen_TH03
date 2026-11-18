@@ -16,6 +16,8 @@ public class AppointmentDetailActivity extends BaseActivity {
     @Override public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_appointment_detail);
+        ((TextView) findViewById(R.id.toolbar_title)).setText(R.string.detail_heading);
+        findViewById(R.id.toolbar_back).setOnClickListener(view -> finish());
         database = new DatabaseHelper(this);
         appointmentId = getIntent().getLongExtra(EXTRA_ID, -1);
         Appointment appointment = database.getAppointmentById(appointmentId);

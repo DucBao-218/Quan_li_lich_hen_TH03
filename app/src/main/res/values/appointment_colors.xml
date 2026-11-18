@@ -4,4 +4,5 @@
     <color name="text_primary">#182D2A</color>
     <color name="text_secondary">#526963</color>
     <color name="danger">#B3261E</color>
+    <color name="reminder_text">#8A4C00</color>
 </resources>

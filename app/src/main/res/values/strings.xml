@@ -1,4 +1,5 @@
 <resources>
+    <string name="login_monogram">LH</string>
     <string name="app_name">Quản lý lịch hẹn</string>
     <string name="login_heading">Chào mừng bạn</string>
     <string name="login_subtitle">Đăng nhập để quản lý lịch hẹn của bạn</string>

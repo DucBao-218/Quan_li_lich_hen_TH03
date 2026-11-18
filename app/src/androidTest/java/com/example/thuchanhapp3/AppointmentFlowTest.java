@@ -28,6 +28,9 @@ public class AppointmentFlowTest {
             onView(withId(R.id.password)).perform(replaceText("123456"), closeSoftKeyboard());
             onView(withId(R.id.login_button)).perform(click());
             onView(withId(R.id.add_button)).perform(click());
+            onView(withId(R.id.toolbar_back)).perform(click());
+            onView(withId(R.id.add_button)).check(matches(isDisplayed()));
+            onView(withId(R.id.add_button)).perform(click());
             onView(withId(R.id.appointment_title)).perform(replaceText("UI test appointment"), closeSoftKeyboard());
             onView(withId(R.id.appointment_location)).perform(replaceText("Test room"), closeSoftKeyboard());
             onView(withId(R.id.save_button)).perform(scrollTo(), click());
@@ -41,6 +44,17 @@ public class AppointmentFlowTest {
             }).inAdapterView(withId(R.id.appointment_list)).perform(click());
             onView(withId(R.id.detail_location)).check(matches(withText("Test room")));
             onView(withId(R.id.detail_reminder)).perform(click());
+            onView(withId(R.id.reminder_status)).check(matches(withText(R.string.reminder_off)));
+            onView(withId(R.id.toolbar_back)).perform(click());
+            onView(withId(R.id.add_button)).check(matches(isDisplayed()));
+            onData(new BoundedMatcher<Object, Appointment>(Appointment.class) {
+                @Override public void describeTo(Description description) {
+                    description.appendText("appointment created by UI test");
+                }
+                @Override protected boolean matchesSafely(Appointment appointment) {
+                    return appointment.getTitle().equals("UI test appointment");
+                }
+            }).inAdapterView(withId(R.id.appointment_list)).perform(click());
             onView(withId(R.id.reminder_status)).check(matches(withText(R.string.reminder_off)));
             onView(withId(R.id.delete_button)).perform(scrollTo(), click());
             onView(withText(R.string.delete)).perform(click());

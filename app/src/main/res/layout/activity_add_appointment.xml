@@ -1,19 +1,28 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
-        <TextView style="@style/ScreenHeading" android:text="@string/add_appointment" />
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/add_subtitle" android:textColor="@color/text_secondary" android:layout_marginTop="6dp" />
-        <TextView style="@style/FieldLabel" android:text="@string/appointment_title" />
-        <EditText android:id="@+id/appointment_title" style="@style/TextField" android:hint="@string/title_hint" android:inputType="textCapSentences" android:importantForAutofill="no" />
-        <TextView style="@style/FieldLabel" android:text="@string/location" />
-        <EditText android:id="@+id/appointment_location" style="@style/TextField" android:hint="@string/location_hint" android:inputType="textCapSentences" android:importantForAutofill="no" />
-        <TextView style="@style/FieldLabel" android:text="@string/date" />
-        <DatePicker android:id="@+id/date_picker" android:layout_width="match_parent" android:layout_height="wrap_content" android:datePickerMode="spinner" android:calendarViewShown="false" />
-        <TextView style="@style/FieldLabel" android:text="@string/time" />
-        <TimePicker android:id="@+id/time_picker" android:layout_width="match_parent" android:layout_height="wrap_content" android:timePickerMode="spinner" />
-        <Switch android:id="@+id/reminder_switch" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="52dp" android:text="@string/reminder" android:textSize="16sp" android:checked="true" />
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/reminder_hint" android:textColor="@color/text_secondary" />
-        <Button android:id="@+id/save_button" style="@style/PrimaryButton" android:text="@string/save" android:layout_marginTop="20dp" />
-        <Button android:id="@+id/cancel_button" style="@style/PrimaryButton" android:text="@string/cancel" android:backgroundTint="#DFEAE5" android:textColor="@color/primary" />
-    </LinearLayout>
-</ScrollView>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+    <include layout="@layout/view_back_toolbar" />
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:fillViewport="true">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/add_subtitle" android:textSize="15sp" android:textColor="@color/text_secondary" android:layout_marginBottom="20dp" />
+            <LinearLayout style="@style/SectionCard">
+                <TextView style="@style/FieldLabel" android:text="@string/appointment_title" android:layout_marginTop="0dp" />
+                <EditText android:id="@+id/appointment_title" style="@style/TextField" android:hint="@string/title_hint" android:inputType="textCapSentences" android:importantForAutofill="no" />
+                <TextView style="@style/FieldLabel" android:text="@string/location" />
+                <EditText android:id="@+id/appointment_location" style="@style/TextField" android:hint="@string/location_hint" android:inputType="textCapSentences" android:importantForAutofill="no" />
+            </LinearLayout>
+            <LinearLayout style="@style/SectionCard" android:padding="12dp">
+                <TextView style="@style/FieldLabel" android:text="@string/date" android:layout_marginTop="0dp" android:paddingStart="6dp" android:paddingEnd="6dp" />
+                <DatePicker android:id="@+id/date_picker" android:layout_width="match_parent" android:layout_height="wrap_content" android:datePickerMode="spinner" android:calendarViewShown="false" />
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E5ECE9" android:layout_marginTop="4dp" />
+                <TextView style="@style/FieldLabel" android:text="@string/time" android:paddingStart="6dp" android:paddingEnd="6dp" />
+                <TimePicker android:id="@+id/time_picker" android:layout_width="match_parent" android:layout_height="wrap_content" android:timePickerMode="spinner" />
+            </LinearLayout>
+            <LinearLayout style="@style/SectionCard">
+                <Switch android:id="@+id/reminder_switch" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:text="@string/reminder" android:textSize="16sp" android:textColor="@color/text_primary" android:checked="true" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/reminder_hint" android:textSize="13sp" android:textColor="@color/text_secondary" android:layout_marginTop="4dp" />
+            </LinearLayout>
+            <Button android:id="@+id/save_button" style="@style/PrimaryButton" android:text="@string/save" android:layout_marginTop="4dp" />
+            <Button android:id="@+id/cancel_button" style="@style/SecondaryButton" android:text="@string/back" android:layout_marginTop="12dp" android:layout_marginBottom="8dp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

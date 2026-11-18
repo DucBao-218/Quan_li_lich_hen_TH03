@@ -16,6 +16,8 @@ public class AddAppointmentActivity extends BaseActivity {
     @Override public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_appointment);
+        ((android.widget.TextView) findViewById(R.id.toolbar_title)).setText(R.string.add_appointment);
+        findViewById(R.id.toolbar_back).setOnClickListener(view -> finish());
         database = new DatabaseHelper(this);
         EditText title = findViewById(R.id.appointment_title);
         EditText location = findViewById(R.id.appointment_location);

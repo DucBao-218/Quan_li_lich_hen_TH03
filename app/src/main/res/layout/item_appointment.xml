@@ -1,8 +1,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical"
-    android:padding="16dp" android:background="@drawable/card_background" android:descendantFocusability="blocksDescendants">
+    android:padding="18dp" android:background="@drawable/card_background" android:descendantFocusability="blocksDescendants">
     <TextView android:id="@+id/row_title" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="18sp" android:textStyle="bold" android:textColor="@color/text_primary" />
-    <TextView android:id="@+id/row_location" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:textSize="15sp" android:textColor="@color/text_secondary" />
-    <TextView android:id="@+id/row_datetime" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:textSize="15sp" android:textColor="@color/text_primary" />
-    <TextView android:id="@+id/row_reminder" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textSize="13sp" android:textStyle="bold" />
+    <TextView android:id="@+id/row_location" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="7dp" android:textSize="14sp" android:textColor="@color/text_secondary" />
+    <TextView android:id="@+id/row_datetime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:textSize="14sp" android:textStyle="bold" android:textColor="@color/primary" android:background="@drawable/date_badge" android:paddingStart="10dp" android:paddingEnd="10dp" android:paddingTop="7dp" android:paddingBottom="7dp" />
+    <TextView android:id="@+id/row_reminder" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textSize="12sp" android:textStyle="bold" android:paddingStart="10dp" android:paddingEnd="10dp" android:paddingTop="5dp" android:paddingBottom="5dp" />
 </LinearLayout>

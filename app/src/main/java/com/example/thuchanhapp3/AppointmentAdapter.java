@@ -30,7 +30,8 @@ public class AppointmentAdapter extends BaseAdapter {
         ((TextView) row.findViewById(R.id.row_datetime)).setText(appointment.getDisplayDateTime());
         TextView reminder = row.findViewById(R.id.row_reminder);
         reminder.setText(appointment.isReminder() ? R.string.has_reminder : R.string.no_reminder);
-        reminder.setTextColor(row.getContext().getColor(appointment.isReminder() ? R.color.primary : R.color.text_secondary));
+        reminder.setTextColor(row.getContext().getColor(appointment.isReminder() ? R.color.reminder_text : R.color.text_secondary));
+        reminder.setBackgroundResource(appointment.isReminder() ? R.drawable.reminder_on_badge : R.drawable.reminder_off_badge);
         return row;
     }
 }
