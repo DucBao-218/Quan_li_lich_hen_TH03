@@ -1,0 +1,22 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:padding="20dp">
+    <TextView style="@style/ScreenHeading" android:text="@string/schedule_heading" />
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/schedule_subtitle" android:textColor="@color/text_secondary" android:layout_marginTop="6dp" />
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="20dp" android:background="@drawable/card_background" android:padding="16dp" android:baselineAligned="false">
+        <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical">
+            <TextView android:id="@+id/total_count" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="30sp" android:textStyle="bold" android:textColor="@color/primary" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/total_label" android:textColor="@color/text_secondary" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical">
+            <TextView android:id="@+id/reminder_count" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="30sp" android:textStyle="bold" android:textColor="@color/primary" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/reminder_label" android:textColor="@color/text_secondary" />
+        </LinearLayout>
+    </LinearLayout>
+    <TextView style="@style/FieldLabel" android:text="@string/list_heading" />
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/list_hint" android:textSize="12sp" android:textColor="@color/text_secondary" android:layout_marginBottom="8dp" />
+    <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+        <ListView android:id="@+id/appointment_list" android:layout_width="match_parent" android:layout_height="match_parent" android:divider="@android:color/transparent" android:dividerHeight="10dp" android:clipToPadding="false" android:paddingBottom="8dp" />
+        <TextView android:id="@+id/empty_list" android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:text="@string/empty_list" android:textSize="16sp" android:textColor="@color/text_secondary" android:visibility="gone" />
+    </FrameLayout>
+    <Button android:id="@+id/add_button" style="@style/PrimaryButton" android:text="@string/add_appointment" />
+</LinearLayout>
